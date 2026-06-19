@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptive Text: Rumah Limas - Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        sriwijaya: {
+                            red: '#8B0000',
+                            gold: '#FFD700',
+                            light: '#FFF8DC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background outside the 16:9 frame */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .mockup-container {
+            width: 100%;
+            max-width: 1920px;
+            aspect-ratio: 16 / 9;
+            background-color: #ffffff;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Custom Scrollbar for the left panel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B0000; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #600000; 
+        }
+
+        /* Radio button custom styling */
+        input[type="radio"] {
+            accent-color: #8B0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mockup-container">
+        
+        <!-- LEFT PANEL (Content) -->
+        <div class="w-1/2 h-full flex flex-col bg-white border-r border-gray-200 z-10 shadow-2xl relative">
+            
+            <!-- Header section -->
+            <div class="bg-sriwijaya-red text-white p-6 shadow-md relative overflow-hidden">
+                <!-- Decorative background element -->
+                <div class="absolute -right-10 -top-10 opacity-10">
+                    <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 8H21L16 12L18 18L12 15L6 18L8 12L3 8H9L12 2Z"/></svg>
+                </div>
+
+                <div class="relative z-10">
+                    <h2 class="text-xs text-sriwijaya-gold font-semibold uppercase tracking-wider mb-1">Interactive Learning</h2>
+                    <h1 class="text-3xl font-bold mb-2 leading-tight">Descriptive Text:<br>Rumah Limas</h1>
+                    <div class="text-sm mt-4 text-gray-200 border-t border-red-800 pt-3 flex flex-col gap-1">
+                        <p><span class="font-semibold text-white">Penyusun:</span> Noralisma, S.Pd.</p>
+                        <p><span class="font-semibold text-white">Instansi:</span> SMA Islam Terpadu Al Furqon Palembang</p>
+                        <p><span class="font-semibold text-white">Sasaran:</span> Kelas X SMA - Fase E</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="flex border-b border-gray-200 bg-gray-50">
+                <button onclick="openTab('tujuan')" id="tab-tujuan" class="flex-1 py-4 text-sm font-semibold text-gray-600 border-b-4 border-transparent hover:text-sriwijaya-red hover:bg-gray-100 transition-colors">
+                    Tujuan Pembelajaran
+                </button>
+                <button onclick="openTab('materi')" id="tab-materi" class="flex-1 py-4 text-sm font-semibold text-gray-600 border-b-4 border-transparent hover:text-sriwijaya-red hover:bg-gray-100 transition-colors">
+                    Uraian Materi
+                </button>
+                <button onclick="openTab('kuis')" id="tab-kuis" class="flex-1 py-4 text-sm font-semibold text-gray-600 border-b-4 border-transparent hover:text-sriwijaya-red hover:bg-gray-100 transition-colors">
+                    Latihan Soal (Quiz)
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-1 overflow-y-auto p-8 text-gray-700 bg-sriwijaya-light bg-opacity-20 relative">
+                
+                <!-- Tab: Tujuan Pembelajaran -->
+                <div id="content-tujuan" class="tab-content">
+                    <h3 class="text-2xl font-bold text-sriwijaya-red mb-6 border-b-2 border-sriwijaya-red inline-block pb-1">Tujuan Pembelajaran</h3>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-sriwijaya-red text-white p-3 rounded-full flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2 text-gray-800">Capaian Pembelajaran (Fase E)</h4>
+                                <p class="leading-relaxed mb-4">
+                                    Peserta didik mampu menggunakan teks lisan, tulisan dan visual dalam bahasa Inggris untuk berkomunikasi sesuai dengan situasi, tujuan, dan pemirsa/pembacanya.
+                                </p>
+                                <h4 class="font-semibold text-lg mb-2 text-gray-800 mt-6">Tujuan Spesifik:</h4>
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li>Peserta didik mampu <strong>mengidentifikasi fungsi sosial, struktur teks, dan unsur kebahasaan</strong> dari teks deskriptif (Descriptive Text) terkait bangunan bersejarah / rumah adat (Rumah Limas).</li>
+                                    <li>Peserta didik mampu <strong>menganalisis informasi rinci (detail information)</strong> yang terdapat dalam teks deskriptif tentang Rumah Limas.</li>
+                                    <li>Peserta didik dapat <strong>menemukan makna kata (vocabulary)</strong> berdasarkan konteks dalam teks deskriptif.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Uraian Materi -->
+                <div id="content-materi" class="tab-content hidden">
+                    <h3 class="text-2xl font-bold text-sriwijaya-red mb-6 border-b-2 border-sriwijaya-red inline-block pb-1">Uraian Materi</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Read the following text carefully!</h4>
+                        <div class="bg-gray-50 p-5 rounded-lg border-l-4 border-sriwijaya-red text-base leading-relaxed text-justify space-y-4">
+                            <p class="italic text-gray-500 text-sm mb-2">Title: Rumah Limas, The Heritage of Palembang</p>
+                            
+                            <p><strong>[Identification]</strong><br>
+                            Rumah Limas is the traditional house of Palembang, South Sumatra Province, Indonesia. It is a prominent symbol of the region's rich cultural heritage and is widely recognized for its unique architecture, which perfectly blends functionality with philosophical values.</p>
+                            
+                            <p><strong>[Description]</strong><br>
+                            The house is fundamentally built on stilts (*rumah panggung*). This elevated design was historically intended to protect the inhabitants from floods, as Palembang is known for its rivers and swamps, and to avoid wild animals. The roof has a distinctive *limasan* (pyramid-like) shape, adorned with traditional ornaments called *simbar* which symbolise majesty and beauty.</p>
+                            
+                            <p>Rumah Limas is primarily constructed using strong, high-quality local wood. *Kayu Ulin* (ironwood), known for its water-resistant properties, is utilized for the foundation and pillars. Meanwhile, *Kayu Tembesu* is used for the walls, floors, and doors. These woods make the structure extremely durable.</p>
+                            
+                            <p>One of the most fascinating features of the interior is its terraced floor called *kekijing*. The house is divided into several levels (usually two to five levels). These levels represent the social status, age, or hierarchy of the guests. The first level is typically for ordinary guests, while the higher levels are strictly reserved for respected elders, community leaders, or close family members. Furthermore, the wooden walls and cabinets are intricately decorated with beautiful carvings featuring floral motifs, such as jasmine and lotus, combined with golden paint, showcasing the luxurious influence of the Sriwijaya empire.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-blue-800 mb-2">Language Features Used:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1 text-blue-900">
+                            <li><strong>Specific Participant:</strong> Rumah Limas.</li>
+                            <li><strong>Simple Present Tense:</strong> "The house <em>is</em> divided...", "It <em>is</em> a prominent symbol...".</li>
+                            <li><strong>Adjectives:</strong> prominent, unique, distinctive, strong, high-quality, beautiful, golden.</li>
+                            <li><strong>Passive Voice:</strong> "...is primarily constructed using...", "...are intricately decorated...".</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tab: Kuis -->
+                <div id="content-kuis" class="tab-content hidden pb-20">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-sriwijaya-red border-b-2 border-sriwijaya-red inline-block pb-1">Evaluasi / Kuis</h3>
+                        <div id="score-display" class="hidden bg-green-100 text-green-800 px-4 py-2 rounded-lg font-bold shadow-sm">
+                            Score: <span id="final-score">0</span>/100
+                        </div>
+                    </div>
+                    
+                    <p class="mb-6 text-gray-600 bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <span class="font-bold">Instructions:</span> Choose the correct answer (A, B, C, D, or E) based on the descriptive text about Rumah Limas!
+                    </p>
+
+                    <!-- Quiz Form Container -->
+                    <form id="quiz-form" class="space-y-8">
+                        <div id="quiz-questions-container">
+                            <!-- Questions will be injected here via JavaScript -->
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-end">
+                            <button type="button" onclick="submitQuiz()" id="submit-btn" class="bg-sriwijaya-red hover:bg-red-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 active:scale-95">
+                                Submit Answers
+                            </button>
+                            <button type="button" onclick="resetQuiz()" id="reset-btn" class="hidden bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors ml-4">
+                                Try Again
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            
+            <!-- Footer text -->
+            <div class="bg-gray-100 text-center py-2 text-xs text-gray-400 border-t border-gray-200 absolute bottom-0 w-full">
+                &copy; 2026 Interactive English Modules | SMA IT Al Furqon
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL (3D / AR Simulator) -->
+        <div class="w-1/2 h-full bg-gray-900 relative">
+            <!-- Loading indicator beneath iframe -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                <svg class="animate-spin h-10 w-10 text-sriwijaya-gold mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p>Loading 3D Simulation...</p>
+                <p class="text-xs mt-2">Assemblr Edu Player</p>
+            </div>
+            
+            <!-- The actual iframe -->
+            <iframe 
+                class="relative z-10 w-full h-full border-0"
+                src='https://viewer.assemblrworld.com/Embed/-fZHYK9hXEghqvEAYG8H' 
+                allow="camera; microphone; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; fullscreen" 
+                allowFullScreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Tab Navigation Logic
+        function openTab(tabName) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Reset tab styling
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('border-sriwijaya-red', 'text-sriwijaya-red', 'bg-white');
+                el.classList.add('border-transparent', 'text-gray-600');
+            });
+
+            // Show selected content
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            
+            // Highlight active tab
+            const activeTab = document.getElementById('tab-' + tabName);
+            activeTab.classList.remove('border-transparent', 'text-gray-600');
+            activeTab.classList.add('border-sriwijaya-red', 'text-sriwijaya-red', 'bg-white');
+        }
+
+        // Initialize first tab
+        openTab('tujuan');
+
+        // Quiz Data
+        const quizData = [
+            {
+                q: "What is the traditional house of Palembang, South Sumatra called?",
+                options: ["Rumah Gadang", "Rumah Joglo", "Rumah Limas", "Rumah Tongkonan", "Rumah Betang"],
+                answer: 2 // Index of correct option (Rumah Limas)
+            },
+            {
+                q: "Why was Rumah Limas originally built on stilts (rumah panggung)?",
+                options: ["To provide space for parking vehicles", "To protect inhabitants from floods and wild animals", "To make the house look larger and taller", "To create a cooler temperature inside the house", "To store crops and agricultural tools"],
+                answer: 1
+            },
+            {
+                q: "Based on the text, what is the distinctive feature of the house's roof?",
+                options: ["It has a flat design", "It resembles a dome", "It has a pyramid-like shape (limasan)", "It is shaped like a boat", "It is made of colorful tiles"],
+                answer: 2
+            },
+            {
+                q: "Which specific type of wood is known for its water-resistant properties and used for the foundation?",
+                options: ["Kayu Jati (Teak wood)", "Kayu Mahoni (Mahogany)", "Bambu (Bamboo)", "Kayu Tembesu", "Kayu Ulin (Ironwood)"],
+                answer: 4
+            },
+            {
+                q: "What are the terraced floors inside the Rumah Limas called?",
+                options: ["Simbar", "Kekijing", "Panggung", "Ukiran", "Pendopo"],
+                answer: 1
+            },
+            {
+                q: "What do the different levels of the floor (kekijing) represent?",
+                options: ["The number of people living in the house", "The age of the house itself", "The social status, age, or hierarchy of the guests", "The wealth of the house owner", "The gender of the visitors"],
+                answer: 2
+            },
+            {
+                q: "Who is typically allowed to sit on the highest level of the house?",
+                options: ["Children and teenagers", "Ordinary guests", "Respected elders or community leaders", "Tourists and foreigners", "The house guards"],
+                answer: 2
+            },
+            {
+                q: "What kind of motifs are usually found on the wooden carvings decorating the walls?",
+                options: ["Wild animals like tigers and eagles", "Floral motifs like jasmine and lotus", "Abstract geometric shapes", "Mountains and rivers", "Weapons and shields"],
+                answer: 1
+            },
+            {
+                q: "\"It is a <u>prominent</u> symbol of the region's rich cultural heritage...\" The underlined word has the closest meaning to...",
+                options: ["Important and well-known", "Hidden and secret", "Small and insignificant", "Modern and new", "Ugly and old"],
+                answer: 0
+            },
+            {
+                q: "What is the main purpose of the text above?",
+                options: ["To amuse the readers with a story about Palembang", "To explain how to build a traditional house", "To describe Rumah Limas in particular", "To persuade people to visit South Sumatra", "To report the condition of houses in Indonesia"],
+                answer: 2
+            }
+        ];
+
+        // Render Quiz
+        const quizContainer = document.getElementById('quiz-questions-container');
+        const alphabet = ['A', 'B', 'C', 'D', 'E'];
+
+        quizData.forEach((item, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-4 quiz-item';
+            
+            let optionsHTML = '';
+            item.options.forEach((opt, optIndex) => {
+                optionsHTML += `
+                    <label class="flex items-center p-3 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors option-label">
+                        <input type="radio" name="q${index}" value="${optIndex}" class="mr-3 w-4 h-4">
+                        <span class="font-medium mr-2">${alphabet[optIndex]}.</span> 
+                        <span class="text-gray-700">${opt}</span>
+                    </label>
+                `;
+            });
+
+            questionDiv.innerHTML = `
+                <div class="flex gap-3 mb-3">
+                    <span class="bg-sriwijaya-red text-white w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">${index + 1}</span>
+                    <h5 class="text-lg font-semibold text-gray-800 leading-snug pt-1">${item.q}</h5>
+                </div>
+                <div class="space-y-2 pl-11">
+                    ${optionsHTML}
+                </div>
+                <div id="feedback-${index}" class="hidden mt-3 pl-11 text-sm font-semibold"></div>
+            `;
+            quizContainer.appendChild(questionDiv);
+        });
+
+        // Submit Logic
+        function submitQuiz() {
+            let score = 0;
+            let answeredAll = true;
+
+            quizData.forEach((item, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                const questionContainer = document.querySelectorAll('.quiz-item')[index];
+                const labels = questionContainer.querySelectorAll('label');
+
+                if (!selected) {
+                    answeredAll = false;
+                    return;
+                }
+
+                // Disable inputs
+                questionContainer.querySelectorAll('input').forEach(input => input.disabled = true);
+
+                const selectedVal = parseInt(selected.value);
+                feedbackDiv.classList.remove('hidden');
+
+                if (selectedVal === item.answer) {
+                    score += 10;
+                    feedbackDiv.innerHTML = '✓ Correct';
+                    feedbackDiv.className = 'mt-3 pl-11 text-sm font-bold text-green-600 block';
+                    selected.closest('label').classList.add('bg-green-100', 'border-green-300');
+                } else {
+                    feedbackDiv.innerHTML = `✗ Incorrect. The correct answer is ${alphabet[item.answer]}. ${item.options[item.answer]}`;
+                    feedbackDiv.className = 'mt-3 pl-11 text-sm font-bold text-red-600 block';
+                    selected.closest('label').classList.add('bg-red-50', 'border-red-300');
+                    // Highlight correct answer slightly
+                    labels[item.answer].classList.add('bg-green-50', 'border-green-200');
+                }
+            });
+
+            if (!answeredAll) {
+                alert('Please answer all questions before submitting.');
+                return;
+            }
+
+            // Show score
+            document.getElementById('final-score').innerText = score;
+            document.getElementById('score-display').classList.remove('hidden');
+            
+            // Toggle buttons
+            document.getElementById('submit-btn').classList.add('hidden');
+            document.getElementById('reset-btn').classList.remove('hidden');
+
+            // Scroll to top of quiz
+            document.getElementById('content-kuis').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            // Reset form
+            document.getElementById('quiz-form').reset();
+            
+            // Hide score
+            document.getElementById('score-display').classList.add('hidden');
+            
+            // Toggle buttons
+            document.getElementById('submit-btn').classList.remove('hidden');
+            document.getElementById('reset-btn').classList.add('hidden');
+
+            // Reset styling and feedback
+            quizData.forEach((item, index) => {
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                feedbackDiv.classList.add('hidden');
+                
+                const questionContainer = document.querySelectorAll('.quiz-item')[index];
+                questionContainer.querySelectorAll('input').forEach(input => input.disabled = false);
+                
+                questionContainer.querySelectorAll('label').forEach(label => {
+                    label.classList.remove('bg-green-100', 'border-green-300', 'bg-red-50', 'border-red-300', 'bg-green-50', 'border-green-200');
+                });
+            });
+            
+            document.getElementById('content-kuis').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
